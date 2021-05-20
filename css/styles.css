@@ -5,10 +5,18 @@ body {
     color: #454545;
     text-rendering: optimizeLegibility;
 }
+
+
+ /* Stilius kuris pritaikomas uzvedus pelyte */
 a img:hover {
-    filter: brightness(98%);
+    filter: brightness(28%);
     transition: .3s ease-in-out;
 }
+
+.elements-content img {
+    width: 100%;
+}
+
 .elements-content .elements-title {
     font-size: 26px;
     color: #454545;
@@ -35,13 +43,29 @@ a img:hover {
 .elements-content .elements-grid .elements-item {
     position: relative;
     margin: 10px;
-    /* flex-basis: calc(33.333% - 20px); */
+    /* Flex basis nustato elementu ploti */
+    flex-basis: calc(33.333% - 20px);
+    /* width: calc(33.333% - 20px); */
     padding: 0;
     box-shadow: 0 1px 10px 0 rgba(0,0,0,.1);
     transition: all .15s ease-in-out;
     border-radius: 3px;
     background: #fff;
 }
+
+/* Mobiliame telefone, elemento plotis turetu buti 50% */
+@media (max-width: 1000px) {
+    .elements-content .elements-grid .elements-item {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 500px) {
+    .elements-content .elements-grid .elements-item {
+        flex-basis: calc(100% - 20px);
+    }
+}
+
 .elements-content .elements-grid .item-download-icon {
     position: absolute;
     right: 20px;
